@@ -10,12 +10,25 @@ function Counter(element,value){
     // spanValue.innerHTML = value;
     this.valueCount.textContent = this.value;
     // this.valueCount.innerHTML = this.value;
+    this.increase = this.increase.bind(this);
+    this.decrease = this.decrease.bind(this);
+    this.reset = this.reset.bind(this);
+
+    this.increaseBtn.addEventListener('click', this.increase);
+    this.decreaseBtn.addEventListener('click', this.decrease);
+    this.resetBtn.addEventListener('click', this.reset);
+    // this.decreaseBtn.addEventListener('click',this.decrease.bind(this));
+    // this.resetBtn.addEventListener('click',this.reset.bind(this));
 }
 
 Counter.prototype.increase = function(){
     console.log(this);
     this.value++;
     this.valueCount.textContent = this.value;
+    // if(e.currentTarget === this.increaseBtn){
+    //     this.value++;
+    //     this.valueCount.textContent = this.value;
+    // }
 }
 Counter.prototype.decrease = function(){
     // console.log(this);
@@ -32,10 +45,6 @@ Counter.prototype.reset = function(){
 const firstCounter = new Counter(getElement('.first-counter'), 100);
 const secondCounter = new Counter(getElement('.second-counter'), 200);
 
-
-firstCounter.increase();
-firstCounter.decrease();
-firstCounter.reset();
 
 // const firstValue = document.querySelector('.first-counter .value');
 
