@@ -12,8 +12,30 @@ function Counter(element,value){
     // this.valueCount.innerHTML = this.value;
 }
 
+Counter.prototype.increase = function(){
+    console.log(this);
+    this.value++;
+    this.valueCount.textContent = this.value;
+}
+Counter.prototype.decrease = function(){
+    // console.log(this);
+    this.value--;
+    this.valueCount.textContent = this.value;
+}
+Counter.prototype.reset = function(){
+    // console.log(this);
+    this.value = 0;
+    this.valueCount.textContent = this.value;
+}
+
+
 const firstCounter = new Counter(getElement('.first-counter'), 100);
 const secondCounter = new Counter(getElement('.second-counter'), 200);
+
+
+firstCounter.increase();
+firstCounter.decrease();
+firstCounter.reset();
 
 // const firstValue = document.querySelector('.first-counter .value');
 
