@@ -1,5 +1,5 @@
 function Counter(element,value){
-    console.log(element,value);
+    // console.log(element,value);
     this.counter = element;
     this.value = value;
     this.resetBtn = element.querySelector('.reset');
@@ -22,7 +22,7 @@ function Counter(element,value){
 }
 
 Counter.prototype.increase = function(){
-    console.log(this);
+    // console.log(this);
     this.value++;
     this.valueCount.textContent = this.value;
     // if(e.currentTarget === this.increaseBtn){
